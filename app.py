@@ -38,7 +38,10 @@ def read_data():
     print(data)
     return render_template('preview.html',data=data)
 
-load = pickle.load(open('model.pkl','rb'))
+import os
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
+load = pickle.load(open(model_path, 'rb'))
+
 #scaler = MinMaxScaler()
 
 
